@@ -1,4 +1,4 @@
-package online_store.config;
+package order_ticket.config;
 
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;

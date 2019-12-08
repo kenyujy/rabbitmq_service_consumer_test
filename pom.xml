@@ -11,6 +11,8 @@
         <module>api</module>
         <module>order_service</module>
         <module>store_front</module>
+        <module>order_ticket</module>
+        <module>ticket_service</module>
     </modules>
     <!-- 父工程packaging是 POM -->
     <packaging>pom</packaging>

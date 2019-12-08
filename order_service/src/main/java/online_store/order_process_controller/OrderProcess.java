@@ -53,7 +53,7 @@ public class OrderProcess {
                         fullfilOrder();
                         TimeUnit.SECONDS.sleep(j);
                     }
-                } catch (IOException | InterruptedException e) {
+                } catch ( InterruptedException e) {
                     e.printStackTrace();
                 } finally {
 
@@ -63,9 +63,12 @@ public class OrderProcess {
         }
     }
 
-    public void fullfilOrder() throws IOException, InterruptedException {
+    public void fullfilOrder() {
 
         Order order= (Order) rabbitTemplate.receiveAndConvert("order");
-        System.out.println(Thread.currentThread().getName()+" 执行订单: "+ order.getOrderId()+" 货物: "+order.getProductSku()+" 送货地址: "+order.getDeliverAddress());
+        if(null!= order) {
+            System.out.println(Thread.currentThread().getName() + " 执行订单: " + order.getOrderId()
+                    + " 货物: " + order.getProductSku() + " 送货地址: " + order.getDeliverAddress());
+        }
     }
 }
